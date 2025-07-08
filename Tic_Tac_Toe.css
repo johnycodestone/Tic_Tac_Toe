@@ -4,12 +4,20 @@
 }
 
 h1, h2 {
+    padding-top: 2rem;
     color:#003049;
 }
 
 body {
     background-color:#669BBC;
     text-align:center;
+    
+}
+
+footer {
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+    font-size: 0.8rem;
 }
 
 .container {
@@ -37,7 +45,6 @@ body {
     border: none;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
     font-size: 8vmin; /* Font size relative to the box size */
-    color: #C1121F;
 }
 
 #reset-btn {
@@ -49,4 +56,34 @@ body {
     border: none;
     cursor: pointer;
 }
+
+#new-btn {
+    padding: 1rem;
+    font-size: 1.25rem;
+    background-color: #003049;
+    color: #FDF0D5;
+    border-radius: 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+#msg {
+    font-size: 2rem;
+    color: #003049;
+}
+
+.msg-container {
+    height: 100vmin;
+    display: flex;
+    flex-direction: column; /* Stack the message and button vertically */
+    justify-content: center; /* Center the content vertically */
+    align-items: center; /* Center the content horizontally */
+    gap: 4rem; /* Space between the message and button */
+
+}
+
+.hide {
+    display: none;
+}
+
 
