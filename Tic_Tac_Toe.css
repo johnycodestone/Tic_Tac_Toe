@@ -1,17 +1,18 @@
 * {
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
 }
 
-h1, h2 {
+h1,
+h2 {
     padding-top: 2rem;
-    color:#003049;
+    color: #003049;
 }
 
 body {
-    background-color:#669BBC;
-    text-align:center;
-    
+    background-color: #669BBC;
+    text-align: center;
+
 }
 
 footer {
@@ -21,30 +22,41 @@ footer {
 }
 
 .container {
-    height:70vh;   /* To enclose whole game in a loose container */
-    display: flex; /* Flexbox to center the game vertically and horizontally. Will only work with below changes. */
-    justify-content: center; /* Horizontally center the content */
-    align-items: center; /* Vertically center the content */
+    height: 70vh;
+    /* To enclose whole game in a loose container */
+    display: flex;
+    /* Flexbox to center the game vertically and horizontally. Will only work with below changes. */
+    justify-content: center;
+    /* Horizontally center the content */
+    align-items: center;
+    /* Vertically center the content */
 }
 
 .game {
-    height: 60vmin;   /* Vmin chosen so that the game is always a perfect square no matter what the */
-    width: 60vmin;  /* dimensions of the screen are as it will attain a square shape based on the shorter */
-    display: flex; /* dimension of the screen */
+    height: 60vmin;
+    /* Vmin chosen so that the game is always a perfect square no matter what the */
+    width: 60vmin;
+    /* dimensions of the screen are as it will attain a square shape based on the shorter */
+    display: flex;
+    /* dimension of the screen */
     flex-wrap: wrap;
-    justify-content: center;   /* Horizontally center the content inside each box */
-    align-items: center;      /* Vertically center the content inside each box */
-    gap: 1.5vmin; /* Gap between the boxes */
-}                
+    justify-content: center;
+    /* Horizontally center the content inside each box */
+    align-items: center;
+    /* Vertically center the content inside each box */
+    gap: 1.5vmin;
+    /* Gap between the boxes */
+}
 
 .box {
     height: 18vmin;
     width: 18vmin;
-    background-color:#FDF0D5;
+    background-color: #FDF0D5;
     border-radius: 1rem;
     border: none;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
-    font-size: 8vmin; /* Font size relative to the box size */
+    font-size: 8vmin;
+    /* Font size relative to the box size */
 }
 
 #reset-btn {
@@ -75,15 +87,17 @@ footer {
 .msg-container {
     height: 100vmin;
     display: flex;
-    flex-direction: column; /* Stack the message and button vertically */
-    justify-content: center; /* Center the content vertically */
-    align-items: center; /* Center the content horizontally */
-    gap: 4rem; /* Space between the message and button */
+    flex-direction: column;
+    /* Stack the message and button vertically */
+    justify-content: center;
+    /* Center the content vertically */
+    align-items: center;
+    /* Center the content horizontally */
+    gap: 4rem;
+    /* Space between the message and button */
 
 }
 
 .hide {
     display: none;
 }
-
-

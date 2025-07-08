@@ -28,14 +28,14 @@ const resetGame = () => {
 
 boxes.forEach((box) => {
     box.addEventListener("click", () => {
-        if(turnO) {
+        if (turnO) {
             box.innerText = "O";
             box.style.color = "blue";
             turnO = false;
         }
         else {
             box.innerText = "X";
-            box.style.color = "red"; 
+            box.style.color = "red";
             turnO = true;
         }
         box.disabled = true;
@@ -63,6 +63,25 @@ const showWinner = (winner) => {
     disableBoxes();
 }
 
+const showDraw = () => {
+    msg.innerHTML = "It`s a Draw!! Try Again!";
+    msgContainer.classList.remove("hide");
+    disableBoxes();
+}
+
+const checkDraw = () => {
+    let draw = true; // Assume it's a draw until proven otherwise
+    boxes.forEach((box) => {
+        if (box.innerHTML === "") {
+            draw = false; // If any box is empty, it's not a draw
+        }
+    })
+    
+    if (draw) {
+        showDraw();
+    }
+}
+
 const checkWinner = () => {
     for (let pattern of winPatterns) {
 
@@ -73,9 +92,11 @@ const checkWinner = () => {
         if (pos1Val !== "" &&
             pos1Val === pos2Val &&
             pos2Val === pos3Val) {
-                showWinner(pos1Val);
-            }
+            showWinner(pos1Val);
+        }
     }
+
+    checkDraw();
 }
 
 newGameBtn.addEventListener("click", resetGame);
