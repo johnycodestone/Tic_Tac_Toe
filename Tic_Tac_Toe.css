@@ -3,23 +3,50 @@
     padding:0;
 }
 
+h1, h2 {
+    color:#003049;
+}
+
 body {
-    background-color:#548687;
+    background-color:#669BBC;
     text-align:center;
 }
 
 .container {
     height:70vh;   /* To enclose whole game in a loose container */
+    display: flex; /* Flexbox to center the game vertically and horizontally. Will only work with below changes. */
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */
 }
 
 .game {
     height: 60vmin;   /* Vmin chosen so that the game is always a perfect square no matter what the */
     width: 60vmin;  /* dimensions of the screen are as it will attain a square shape based on the shorter */
-}                /* dimension of the screen */
+    display: flex; /* dimension of the screen */
+    flex-wrap: wrap;
+    justify-content: center;   /* Horizontally center the content inside each box */
+    align-items: center;      /* Vertically center the content inside each box */
+    gap: 1.5vmin; /* Gap between the boxes */
+}                
 
 .box {
     height: 18vmin;
     width: 18vmin;
+    background-color:#FDF0D5;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+    font-size: 8vmin; /* Font size relative to the box size */
+    color: #C1121F;
 }
 
+#reset-btn {
+    padding: 1rem;
+    font-size: 1.25rem;
+    background-color: #003049;
+    color: #FDF0D5;
+    border-radius: 1rem;
+    border: none;
+    cursor: pointer;
+}
 
