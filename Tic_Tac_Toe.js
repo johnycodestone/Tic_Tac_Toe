@@ -26,24 +26,6 @@ const resetGame = () => {
     msgContainer.classList.add("hide"); // Hide the message container
 }
 
-boxes.forEach((box) => {
-    box.addEventListener("click", () => {
-        if (turnO) {
-            box.innerText = "O";
-            box.style.color = "blue";
-            turnO = false;
-        }
-        else {
-            box.innerText = "X";
-            box.style.color = "red";
-            turnO = true;
-        }
-        box.disabled = true;
-
-        checkWinner();
-    });
-});
-
 const disableBoxes = () => {
     boxes.forEach((box) => {
         box.disabled = true;
@@ -76,7 +58,7 @@ const checkDraw = () => {
             draw = false; // If any box is empty, it's not a draw
         }
     })
-    
+
     if (draw) {
         showDraw();
     }
@@ -93,11 +75,36 @@ const checkWinner = () => {
             pos1Val === pos2Val &&
             pos2Val === pos3Val) {
             showWinner(pos1Val);
+            return true; // Winner found to prevent checkDraw() from being called
         }
     }
-
-    checkDraw();
+    return false; // No winner found, so that checkDraw() can be called
 }
+
+boxes.forEach((box) => {
+    box.addEventListener("mouseover", () => {
+        box.style.cursor = "pointer";
+    })
+    box.addEventListener("click", () => {
+        if (turnO) {
+            box.innerText = "O";
+            box.style.color = "blue";
+            turnO = false;
+        }
+        else {
+            box.innerText = "X";
+            box.style.color = "red";
+            turnO = true;
+        }
+        box.disabled = true;
+
+        let victory = checkWinner();
+        if (!victory) {
+            checkDraw();  // Check for a draw only if no winner is found
+        }
+
+    });
+});
 
 newGameBtn.addEventListener("click", resetGame);
 resetBtn.addEventListener("click", resetGame);
