@@ -39,7 +39,7 @@ footer {
     /* dimensions of the screen are as it will attain a square shape based on the shorter */
     display: flex;
     /* dimension of the screen */
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* So, that if items unable to fit in a row, they automatically adjust to a new line */
     justify-content: center;
     /* Horizontally center the content inside each box */
     align-items: center;
